@@ -411,6 +411,7 @@ span {
     background-size: cover;
     display: flex;
    justify-content: flex-start;
+   flex-direction: column;
 }
 
 .beneficios-direção {
@@ -430,6 +431,8 @@ span {
 .beneficios-textos {
     display: flex;
     align-items: center;
+    padding-left: 10%;
+    padding-top: 15%;
 }
 
 .beneficios-parags {
@@ -494,6 +497,52 @@ span {
     font-size: 35px;
     font-weight: 400;
     color: white;
+}
+.carousel {
+    margin-left: 100px;
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    background-color: white;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item img {
+    width: 100%;
+    display: block;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
 }
 
 /* fim na pratica */
@@ -821,5 +870,50 @@ span {
 
     .pratica-parag2 {
         font-size: 24px;
+    }
+    .carousel {
+        margin-left: 0px;
+        position: relative;
+        width: 80%;
+        max-width: 800px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+    }
+    
+    .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .carousel-item {
+        min-width: 100%;
+        transition: opacity 0.5s ease-in-out;
+    }
+    
+    .carousel-item img {
+        width: 100%;
+        display: block;
+    }
+    
+    .carousel-control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: white;
+        font-size: 2rem;
+        padding: 10px;
+        cursor: pointer;
+    }
+    
+    .carousel-control.prev {
+        left: 10px;
+    }
+    
+    .carousel-control.next {
+        right: 10px;
     }
 }
