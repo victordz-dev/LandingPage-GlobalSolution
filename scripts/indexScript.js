@@ -38,3 +38,29 @@ document.querySelector('.carousel').addEventListener('mouseover', stopCarousel);
 
 document.querySelector('.carousel').addEventListener('mouseout', startCarousel);
 
+window.addEventListener('load', () => {
+    document.querySelector('.navegação').style.opacity = 1;
+  });
+window.addEventListener('load', () => {
+    document.querySelector('.inicio-titulo').style.opacity = 1;
+  });
+window.addEventListener('load', () => {
+    document.querySelector('.inicio-parag').style.opacity = 1;
+  });
+
+
+  function onScroll() {
+    const elements = document.querySelectorAll("*");
+    const windowHeight = window.innerHeight;
+
+    elements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+
+      if (elementTop < windowHeight - 50) {
+        element.classList.add('visible');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', onScroll);
+  window.addEventListener('load', onScroll);
