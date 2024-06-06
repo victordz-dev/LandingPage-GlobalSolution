@@ -26,6 +26,7 @@ body {
     width: 100%;
     background-color: #06141B;
     position: fixed;
+    z-index: 1;
 }
 
 .nav-menu {
@@ -521,6 +522,7 @@ span {
 
     .navegação {
         padding: 18px 20px;
+        z-index: 1;
     }
 
     .menu {
