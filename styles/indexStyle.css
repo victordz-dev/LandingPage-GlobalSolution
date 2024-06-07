@@ -1,7 +1,8 @@
 /* geral */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); /* importando fonte Raleway do google fonts*/
 
-* {
+/* resetando estilos padrões */
+* { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,10 +11,12 @@
     text-decoration: none;
 }
 
+ 
 body {
     background-color: #06141B;
 }
 
+/* animação de fade-in */
 p {
     opacity: 0;
     transform: translateY(20px);
@@ -515,7 +518,8 @@ span {
     font-weight: 400;
     color: white;
 }
-.carousel {
+/*carrossel*/
+.carrossel {
     margin-left: 100px;
     position: relative;
     width: 80%;
@@ -527,22 +531,22 @@ span {
     background-color: white;
 }
 
-.carousel-inner {
+.carrossel-inner { /* container dos itens de carrossel */
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
 
-.carousel-item {
+.carrossel-item { /* item do carrossel */
     min-width: 100%;
     transition: opacity 0.5s ease-in-out;
 }
 
-.carousel-item img {
+.carrossel-item img { /* imagem do item do carrossel */
     width: 100%;
     display: block;
 }
 
-.carousel-control {
+.carrossel-btn { /* botões de controle do carrossel */
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -554,11 +558,11 @@ span {
     cursor: pointer;
 }
 
-.carousel-control.prev {
+.carrossel-btn.prev { /* botão de controle de slide anterior */
     left: 10px;
 }
 
-.carousel-control.next {
+.carrossel-btn.next { /* botão de controle de próximo slide */
     right: 10px;
 }
 
@@ -584,10 +588,10 @@ span {
 
 /* responsividade */
 
-@media (max-width: 480px) {
+@media (max-width: 480px) { 
     * {
         margin: 0;
-        padding: 0;
+        padding: 0; 
         box-sizing: border-box;
     }
 

@@ -1,45 +1,45 @@
-const menu = document.querySelector('.menu');
-const NavMenu = document.querySelector('.nav-menu');
+const menu = document.querySelector('.menu'); // Seleciona o menu
+const NavMenu = document.querySelector('.nav-menu'); // Seleciona o menu de navegação
 
-menu.addEventListener('click', () => {
-    menu.classList.toggle('ativo');
-    NavMenu.classList.toggle('ativo');
+menu.addEventListener('click', () => { // Adiciona um evento de clique no menu
+    menu.classList.toggle('ativo'); // Adiciona ou remove a classe ativo no menu
+    NavMenu.classList.toggle('ativo'); // Adiciona ou remove a classe ativo no menu de navegação
 })
 
-let currentIndex = 0;
-let slideInterval;
+let indexAtual = 0; // Índice do slide atual
+let intervaloSlides;  // Intervalo de tempo entre os slides
 
-function moveSlide(direction) {
-    const slides = document.querySelectorAll('.carousel-item');
-    const totalSlides = slides.length;
+function moverSlide(direcao) { // Função para mover o slide
+    const slides = document.querySelectorAll('.carrossel-item'); // Seleciona todos os slides
+    const totalSlides = slides.length; // Total de slides
 
-    slides[currentIndex].classList.remove('active');
+    slides[indexAtual].classList.remove('active'); // Remove a classe active do slide atual
 
-    currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+    indexAtual = (indexAtual + direcao + totalSlides) % totalSlides; // Calcula o índice do próximo slide
 
-    document.querySelector('.carousel-inner').style.transform = `translateX(-${currentIndex * 100}%)`;
+    document.querySelector('.carrossel-inner').style.transform = `translateX(-${indexAtual * 100}%)`; // Move o slide
 
-    slides[currentIndex].classList.add('active');
+    slides[indexAtual].classList.add('active'); // Adiciona a classe active ao próximo slide
 }
 
-function startCarousel() {
-    slideInterval = setInterval(() => {
-        moveSlide(1);
+function carrosselInicio() { // Função para iniciar o carrossel
+    intervaloSlides = setInterval(() => {
+        moverSlide(1);
     }, 3000);
 }
 
-function stopCarousel() {
-    clearInterval(slideInterval);
+function carrosselPara() { // Função para parar o carrossel
+    clearInterval(intervaloSlides); 
 }
 
-window.onload = startCarousel;
+window.onload = carrosselInicio; // Inicia o carrossel ao carregar a página
 
-document.querySelector('.carousel').addEventListener('mouseover', stopCarousel);
+document.querySelector('.carrossel').addEventListener('mouseover', carrosselPara); // Adiciona um evento de mouseover no carrossel
 
-document.querySelector('.carousel').addEventListener('mouseout', startCarousel);
+document.querySelector('.carrossel').addEventListener('mouseout', carrosselInicio); // Adiciona um evento de mouseout no carrossel
 
-window.addEventListener('load', () => {
-    document.querySelector('.navegação').style.opacity = 1;
+window.addEventListener('load', () => { 
+    document.querySelector('.navegação').style.opacity = 1; 
   });
 window.addEventListener('load', () => {
     document.querySelector('.inicio-titulo').style.opacity = 1;
@@ -48,19 +48,18 @@ window.addEventListener('load', () => {
     document.querySelector('.inicio-parag').style.opacity = 1;
   });
 
+  function onScroll() { // Função para animar os elementos ao rolar a página
+    const elementos = document.querySelectorAll("*");
+    const windowHeight = window.innerHeight;  
 
-  function onScroll() {
-    const elements = document.querySelectorAll("*");
-    const windowHeight = window.innerHeight;
+    elementos.forEach(elemento => {
+      const elementoTopo = elemento.getBoundingClientRect().top; // Obtém a posição do elemento em relação ao topo da janela
 
-    elements.forEach(element => {
-      const elementTop = element.getBoundingClientRect().top;
-
-      if (elementTop < windowHeight - 50) {
-        element.classList.add('visible');
+      if (elementoTopo < windowHeight - 50) { // Verifica se o elemento está visível
+        elemento.classList.add('visible'); // Adiciona a classe visible ao elemento
       }
     });
   }
 
-  window.addEventListener('scroll', onScroll);
-  window.addEventListener('load', onScroll);
+  window.addEventListener('scroll', onScroll); // Adiciona um evento de scroll na janela
+  window.addEventListener('load', onScroll); // Adiciona um evento de load na janela
