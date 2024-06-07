@@ -19,6 +19,17 @@ body {
       width: 300px;
   }
   
+  #padrao {
+    color: gray;
+    font-size: smaller;
+    font-style: italic;
+  }
+
+  #padrao p {
+    padding: 0px;
+    margin: 0px;
+  }
+
   h2 {
       margin-bottom: 20px;
   }
