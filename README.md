@@ -1,5 +1,6 @@
 # LandingPage-GlobalSolution
-## Link para o GitPges do Projeto:
+## Link para o GitPages do Projeto:
+### Login padrão: usuario / Senha padrão: senha123
 https://victordz-dev.github.io/LandingPage-GlobalSolution/
 
 ## Integrantes:
